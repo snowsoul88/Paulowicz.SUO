@@ -1,0 +1,124 @@
+<ion-view>
+    <ion-pane padding="false" class="terminal-content-select shedule">
+		<table class="terminal-shedule-table">
+			<tbody>
+				<tr class="terminal-shedule-calendar">
+					<td class="shedule-calendar">
+						<div class="shedule-holder date-holder">
+							<div class="bracket">ДАТА</div>
+							<div class="shedule-key" ng-click="date(-1)"><i class="icon ion-ios7-minus-empty"></i></div>
+							<div class="shedule-key shedule-date">{{shedule_date}}</div>
+							<div class="shedule-key" ng-click="date(1)"><i class="icon ion-ios7-plus-empty"></i></div>
+						</div>
+						<div class="shedule-holder hours-holder">
+							<div class="bracket">ЧАСЫ</div>
+							<div class="shedule-key" ng-click="hours(-1)"><i class="icon ion-ios7-minus-empty"></i></div>
+							<div class="shedule-key">{{shedule_hours}}</div>
+							<div class="shedule-key" ng-click="hours(1)"><i class="icon ion-ios7-plus-empty"></i></div>
+						</div>
+						<div class="shedule-holder minutes-holder">
+							<div class="bracket">МИНУТЫ</div>
+							<div class="shedule-key" ng-click="minutes(-1)"><i class="icon ion-ios7-minus-empty"></i></div>
+							<div class="shedule-key">{{shedule_minutes}}</div>
+							<div class="shedule-key" ng-click="minutes(1)"><i class="icon ion-ios7-plus-empty"></i></div>
+						</div>
+					</td>
+				</tr>
+				<tr class="terminal-shedule-form">
+					<td>
+						<form>
+							<input type="text" name="guest_name" ng-model="adata.guest_name" placeholder="фамилия, имя, отчество">
+						</form>
+					</td>
+				</tr>
+				<tr class="terminal-shedule-keyboard">
+					<td>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<div class="keyboard-key" ng-click="write('1')">1</div>
+										<div class="keyboard-key" ng-click="write('2')">2</div>
+										<div class="keyboard-key" ng-click="write('3')">3</div>
+										<div class="keyboard-key" ng-click="write('4')">4</div>
+										<div class="keyboard-key" ng-click="write('5')">5</div>
+										<div class="keyboard-key" ng-click="write('6')">6</div>
+										<div class="keyboard-key" ng-click="write('7')">7</div>
+										<div class="keyboard-key" ng-click="write('8')">8</div>
+										<div class="keyboard-key" ng-click="write('9')">9</div>
+										<div class="keyboard-key" ng-click="write('0')">0</div>
+										<div class="keyboard-key keyboard-backspace" ng-click="backspace()">Стереть</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="keyboard-key" ng-click="write('Й')">Й</div>
+										<div class="keyboard-key" ng-click="write('Ц')">Ц</div>
+										<div class="keyboard-key" ng-click="write('У')">У</div>
+										<div class="keyboard-key" ng-click="write('К')">К</div>
+										<div class="keyboard-key" ng-click="write('Е')">Е</div>
+										<div class="keyboard-key" ng-click="write('Н')">Н</div>
+										<div class="keyboard-key" ng-click="write('Г')">Г</div>
+										<div class="keyboard-key" ng-click="write('Ш')">Ш</div>
+										<div class="keyboard-key" ng-click="write('Щ')">Щ</div>
+										<div class="keyboard-key" ng-click="write('З')">З</div>
+										<div class="keyboard-key" ng-click="write('Х')">Х</div>
+										<div class="keyboard-key" ng-click="write('Ъ')">Ъ</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="keyboard-key" ng-click="write('Ф')">Ф</div>
+										<div class="keyboard-key" ng-click="write('Ы')">Ы</div>
+										<div class="keyboard-key" ng-click="write('В')">В</div>
+										<div class="keyboard-key" ng-click="write('А')">А</div>
+										<div class="keyboard-key" ng-click="write('П')">П</div>
+										<div class="keyboard-key" ng-click="write('Р')">Р</div>
+										<div class="keyboard-key" ng-click="write('О')">О</div>
+										<div class="keyboard-key" ng-click="write('Л')">Л</div>
+										<div class="keyboard-key" ng-click="write('Д')">Д</div>
+										<div class="keyboard-key" ng-click="write('Ж')">Ж</div>
+										<div class="keyboard-key" ng-click="write('Э')">Э</div>
+										<div class="keyboard-key" ng-click="write('Ё')">Ё</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="keyboard-key" ng-click="write('Я')">Я</div>
+										<div class="keyboard-key" ng-click="write('Ч')">Ч</div>
+										<div class="keyboard-key" ng-click="write('С')">С</div>
+										<div class="keyboard-key" ng-click="write('М')">М</div>
+										<div class="keyboard-key" ng-click="write('И')">И</div>
+										<div class="keyboard-key" ng-click="write('Т')">Т</div>
+										<div class="keyboard-key" ng-click="write('Ь')">Ь</div>
+										<div class="keyboard-key" ng-click="write('Б')">Б</div>
+										<div class="keyboard-key" ng-click="write('Ю')">Ю</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="keyboard-key keyboard-space" ng-click="write(' ')">Пробел</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+    </ion-pane>
+	<div class="bar bar-footer bar-light">
+		<a href="/#/kiosk/booking/situation/" class="tile button-terminal-back">
+			<i class="icon ion-ios7-arrow-left"></i>
+			<span class="">Назад</span>
+		</a>
+		<button class="button button-terminal-print tile" ng-click="print_ticket()" ng-disabled="servcount == 0 || adata.guest_name == ''">
+			Напечатать талон
+			<i class="icon ion-ios7-paper-outline"></i>
+		</button>
+		<div class="tile terminal-servcount" ng-if="servcount > 0">
+			<span class="">Выбрано услуг</span>
+			<span class="circle">{{servcount}}</span>
+		</div>
+	</div>
+</ion-view>

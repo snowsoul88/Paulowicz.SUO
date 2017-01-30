@@ -1,0 +1,33 @@
+<ion-view>
+	<ion-header-bar class="bar-header bar-mydocuments">
+		<h1 class="title" ng-if="sid != 'null'">{{booking_menu[0].product_situation_name}}</h1>
+		<h1 class="title" ng-if="sid == 'null'">Все услуги</h1>
+	</ion-header-bar>
+    <ion-content padding="false" class="terminal-content-select">
+		<ul class="list" ng-repeat="item in booking_menu">
+			<li class="item item-divider">
+				{{item.product_situation_name}}
+			</li>
+			<li class="item item-checkbox item-button-right" ng-repeat="product in item.products">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="product.enabled" value="{{product.product_id}}" ng-click="terminal_servcount()">
+				</label>
+				{{product.product_name}}
+			</li>
+		</ul>
+    </ion-content>
+	<div class="bar bar-footer bar-light">
+		<a href="/#/kiosk/booking" class="tile button-terminal-back">
+			<i class="icon ion-ios7-arrow-left"></i>
+			<span class="">Назад</span>
+		</a>
+		<button class="button button-terminal-print tile" ng-click="print_ticket()" ng-disabled="servcount == 0">
+			Напечатать талон
+			<i class="icon ion-ios7-paper-outline"></i>
+		</button>
+		<div class="tile terminal-servcount" ng-if="servcount > 0">
+			<span class="">Выбрано услуг</span>
+			<span class="circle">{{servcount}}</span>
+		</div>
+	</div>
+</ion-view>

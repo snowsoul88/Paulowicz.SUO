@@ -1,0 +1,38 @@
+<ion-modal-view>
+	<ion-header-bar align-title="center" class="bar bar-header bar-assertive item-input-inset">
+		<h1 class="title">Новый тип расписания</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="modal_ts_add.hide()">Закрыть</button>
+		</div>
+	</ion-header-bar>
+    <ion-content has-header="true" padding="true">
+   		<form method="post" ng-submit="admin_ts_add()" name="add_form">
+			<div class="list list-inset">
+	  			<label class="item item-input">
+	    			<input type="text" placeholder="Имя типа расписания" ng-model="adata.type_name" required>
+	  			</label>
+	  			<label class="item item-input">
+	    			<input type="text" placeholder="Описание типа" ng-model="adata.type_description">
+	  			</label>
+	  		</div>
+			<div class="list list-inset">
+	  			<label class="item item-radio">
+	    			<input type="radio" name="type_operable" ng-model="adata.type_operable" value="0" required>
+	    			<div class="item-content">
+	      			Нерабочее время
+	    			</div>
+	    			<i class="radio-icon ion-checkmark"></i>
+	  			</label>
+	  			<label class="item item-radio">
+	    			<input type="radio" name="type_operable" ng-model="adata.type_operable" value="1" required>
+	    			<div class="item-content">
+	      			Рабочее время
+	    			</div>
+	    			<i class="radio-icon ion-checkmark"></i>
+	  			</label>
+			</div>
+			<div class="padding">
+				<button class="button button-block button-balanced" ng-disabled="add_form.$invalid">Готово</button>
+			</div>
+    </ion-content>
+</ion-modal-view>

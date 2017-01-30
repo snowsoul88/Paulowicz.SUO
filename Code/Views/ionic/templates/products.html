@@ -1,0 +1,11 @@
+<ion-view title="navTitle" hide-back-button="false" left-buttons="leftButtons" right-buttons="rightButtons" hide-back-button="true">
+    <ion-content has-header="true" padding="true">
+    	<div class="list" ng-repeat="item in booking_menu">
+			<a class="item item-icon-left item-icon-right" href="#" ng-repeat="product in item.products">
+				<i class="icon ion-ios7-filing-outline"></i>
+				{{product.product_name}}
+				<i class="icon ion-ios7-arrow-right"></i>
+			</a>
+		</div>
+    </ion-content>
+</ion-view>

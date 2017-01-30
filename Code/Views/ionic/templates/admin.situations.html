@@ -1,0 +1,30 @@
+<ion-view title="Ситуации - меню инфокиоска ({{config_situations.length}})">
+	<ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+	</ion-nav-buttons>
+	<ion-header-bar class="bar-subheader bar-stable">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios7-minus-outline" ng-click="list.showDelete = !list.showDelete"></button>
+		</div>
+		<h2 class="title"></h2>  
+		<div class="buttons">
+			<button class="button button-outline button-balanced" ng-click="show_situation_add()">
+				<i class="icon ion-ios7-plus-outline"></i>
+			</button>
+			<button class="button button-outline button-assertive" ng-click="run_queue_admin_sync()">
+				<i class="icon ion-ios7-loop"></i>
+				Синхронизировать с Re:Doc
+			</button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" class="has-header">
+		<ion-list can-swipe="true" show-delete="list.showDelete">
+			<ion-item class="item" ng-repeat="item in config_situations">
+				{{item.name}} <span class="item-note">{{item.prefix}}</span>
+				<ion-delete-button class="ion-minus-circled" ng-click="delete($index, '{{item.id}}')"></ion-delete-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

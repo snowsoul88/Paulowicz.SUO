@@ -1,0 +1,42 @@
+<ion-view>
+	<ion-pane padding="true">
+		<div class="terminal-content terminal-prod-menu">
+			<div class="terminal-tiles">
+				<a class="tile" ng-repeat="item in booking_menu" ng-if="item.kioskmenu_expanded == 'false'" ng-click="print_ticket('{{item.product_situation_id}}')">
+					<span class="">
+						{{item.product_situation_name}}
+					</span>
+					<i class="icon ion-ios7-paper-outline"></i>
+				</a>
+				<a class="tile" ng-repeat="item in booking_menu" ng-if="item.kioskmenu_expanded == 'true'" ng-href="/#/kiosk/situation/{{item.product_situation_id}}">
+					<span class="">
+						{{item.product_situation_name}}
+					</span>
+					<i class="icon ion-ios7-arrow-right"></i>
+				</a>
+			</div>
+		</div>
+		<div class="terminal-content terminal-func-menu">
+			<div class="terminal-tiles">
+				<a class="tile" href="/#/kiosk/situation/">
+					<i class="icon ion-ios7-arrow-right"></i>
+					<span class="">
+						Я знаю, какая услуга мне нужна!
+					</span>
+				</a>
+				<a class="tile booking" href="/#/kiosk/booking/situation/">
+					<i class="icon ion-ios7-time-outline"></i>
+					<span class="">
+						Запись на прием по расписанию
+					</span>
+				</a>
+				<a class="tile booking" href="/#/kiosk/booking/submit">
+					<i class="icon ion-ios7-checkmark-outline"></i>
+					<span class="">
+						Подтверждение записи на прием по расписанию
+					</span>
+				</a>
+			</div>
+		</div>
+    </ion-pane>
+</ion-view>

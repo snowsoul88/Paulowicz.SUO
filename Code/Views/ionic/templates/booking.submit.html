@@ -1,0 +1,61 @@
+<ion-view>
+    <ion-pane padding="false" class="terminal-content-select shedule">
+		<table class="terminal-shedule-table">
+			<tbody>
+				<tr class="terminal-shedule-form">
+					<td>
+						<form>
+							<input type="text" name="pincode" ng-model="adata.pincode" placeholder="ПИН-КОД">
+						</form>
+					</td>
+				</tr>
+				<tr class="terminal-shedule-keyboard">
+					<td>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<div class="keyboard-key" ng-click="write('1')">1</div>
+										<div class="keyboard-key" ng-click="write('2')">2</div>
+										<div class="keyboard-key" ng-click="write('3')">3</div>
+										<div class="keyboard-key" ng-click="write('4')">4</div>
+										<div class="keyboard-key" ng-click="write('5')">5</div>
+										<div class="keyboard-key" ng-click="write('6')">6</div>
+										<div class="keyboard-key" ng-click="write('7')">7</div>
+										<div class="keyboard-key" ng-click="write('8')">8</div>
+										<div class="keyboard-key" ng-click="write('9')">9</div>
+										<div class="keyboard-key" ng-click="write('0')">0</div>
+										<div class="keyboard-key keyboard-backspace" ng-click="backspace()">Стереть</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="ticket-helper ticket-content" ng-bind-html="ticket_data.ticket_template" ng-if="ticket_data.ticket_exists == true"></div>
+										<div class="ticket-helper ticket-content" ng-if="ticket_data.ticket_exists == false">
+											<div class="helper-info">Введите 6-значное число, указанное на талоне внизу</div>
+											<div class="helper-header">ПИН-КОД</div>
+											<div class="helper-pincode">7****1</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+    </ion-pane>
+	<div class="bar bar-footer bar-light">
+		<a href="/#/kiosk/booking/" class="tile button-terminal-back">
+			<i class="icon ion-ios7-arrow-left"></i>
+			<span class="">Назад</span>
+		</a>
+		<button class="button button-terminal-print tile" ng-click="print_ticket()" ng-disabled="ticket_data.ticket_exists == false">
+			Подтвердить бронь
+			<i class="icon ion-ios7-paper-outline"></i>
+		</button>
+		<div class="tile terminal-submit" ng-if="ticket_data.ticket_exists == true">
+			<span class=""><p>Вас ожидают ко времени:</p>{{ticket_data.ticket_not_before}}</span>
+		</div>
+	</div>
+</ion-view>

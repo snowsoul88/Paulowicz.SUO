@@ -1,0 +1,47 @@
+<ion-view title="Индикатор очереди">
+	<ion-pane padding="false" class="background-dark">
+		<table class="plasma-table">
+			<tbody>
+				<tr>
+					<td class="plasma-table-recent">
+						<table ng-if="queue_recent_notification" class="">
+							<tbody>
+			    				<tr class="plasma-recent-ticket led-{{queue_recent_notification.queue_recent_state.action_id}}">
+			    					<td colspan="2" class="text-center">
+			    					{{queue_recent_notification.ticket_prefix}} {{queue_recent_notification.ticket_number}}
+			    					</td>
+			    				</tr>
+			    				<tr class="plasma-recent-workplace">
+			    					<td class="text-right">{{queue_recent_notification.workplace_state.workplace_type.type_name}}</td>
+									<td class="text-left">{{queue_recent_notification.workplace_state.workplace_number}}</td>
+								</tr>
+							</tbody>
+		    			</table>
+					</td>
+					<td class="plasma-table-queue">
+						<table>
+							<tbody>
+								<tr ng-repeat="item in notifications_queue">
+						        	<td>
+						        		<div class="row">
+							        		<div class="col">{{item.action.ticket.ticket_prefix}} {{item.action.ticket.ticket_number}}</div>
+											<div class="col workplace">{{item.workplace_state.workplace_type.type_name}}</div>
+											<div class="col col-10 workplace">{{item.workplace_state.workplace_number}}</div>
+											<div class="col col-50">{{item.action.action_name}}</div>
+										</div>
+						        	</td>
+						        </tr>
+						    </tbody>
+				        </table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="marquee">
+			<marquee style="height:40px">{{marquee}}</marquee>
+		</div>
+		<audio id="audio_notification_player">
+			<source src="{{audio_notification}}"></source>
+		</audio>
+	</ion-pane>
+</ion-view>
