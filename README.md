@@ -1,3 +1,3 @@
 # Paulowicz.SUO
-Рабочий вариант в папке Code2
-Дамп базы в папке Code некорректный.
+Working version in folder Code2
+Databse dump in folder Code incorrect.
