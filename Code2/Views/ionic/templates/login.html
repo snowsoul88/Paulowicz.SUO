@@ -1,0 +1,35 @@
+<ion-view title="Администратор зала">
+	<ion-pane padding="false" class="has-header vertical-center-wrap login-pane">
+			<form method="post" ng-submit="login()" name="loginForm" class="login-form vertical-center-elem">
+				<div class="logo">
+					<img src="/Views/ionic/img/redoc-logo.png">
+				</div>
+				<div class="list list-inset">
+					<label class="item item-input item-select">
+						<i class="icon ion-ios7-people-outline placeholder-icon"></i>
+						<div class="input-label">АРМ</div>
+						<select name="shedule" ng-model="adata.client_id" required autofocus>
+							<option ng-repeat="client in clients" value="{{client.client_id}}">{{client.client_id}}</option>
+						</select>
+					</label>
+					<label class="item item-input">
+						<i class="icon ion-ios7-at-outline placeholder-icon"></i>
+						<input type="text" name="login" ng-model="adata.login" placeholder="Имя пользователя" required>
+					</label>
+					<label class="item item-input">
+						<i class="icon ion-key placeholder-icon"></i>
+						<input type="password" name="password" ng-model="adata.password" placeholder="Пароль" required>
+					</label>
+					<label class="item item-input item-select">
+						<div class="input-label">Статус</div>
+						<select name="shedule" ng-model="adata.shedule" required>
+							<option ng-repeat="shedule_type in shedule_types" value="{{shedule_type.type_id}}">{{shedule_type.type_name}}</option>
+						</select>
+					</label>
+				</div>
+				<div class="padding">
+					<button type="submit" ng-disabled="loginForm.$invalid" class="button button-block icon-left ion-ios7-locked-outline button-outline button-assertive">Вход</button>
+				</div>
+			</form>
+	</ion-pane>
+</ion-view>

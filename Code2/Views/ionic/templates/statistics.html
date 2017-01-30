@@ -1,0 +1,48 @@
+<ion-view title="Статистика">
+	<ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+	</ion-nav-buttons>
+	<ion-header-bar class="bar-subheader bar-stable">
+		<div class="buttons">
+			<h4></h4>
+		</div>
+		<h2 class="title"></h2>  
+		<div class="buttons">
+			
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" class="has-header">
+		<ion-list can-swipe="false">
+			<!-- Показатели работы МФЦ (время) -->
+			<ion-item class="item item-divider">
+				Временные показатели работы МФЦ
+			</ion-item>
+			<ion-item class="item" ng-repeat="item in statistics_timing">
+				{{item.description}} <span class="item-note">{{item.value}}</span>
+			</ion-item>
+			<!-- Показатели работы МФЦ (количество) -->
+			<ion-item class="item item-divider">
+				Количественные показатели работы МФЦ
+			</ion-item>
+			<ion-item class="item" ng-repeat="item in statistics_counting">
+				{{item.description}} <span class="item-note">{{item.value}}</span>
+			</ion-item>
+			<!-- Оказанные услуги и принятые посетители -->
+			<ion-item class="item item-divider">
+				Оказанные услуги и принятые посетители
+			</ion-item>
+			<ion-item class="item" ng-repeat="item in statistics_visitors">
+				{{item.description}} <span class="item-note">{{item.value}}</span>
+			</ion-item>
+			<!-- Оказанные услуги по категориям -->
+			<ion-item class="item item-divider">
+				Оказанные услуги по категориям
+			</ion-item>
+			<ion-item class="item" ng-repeat="item in statistics_categories">
+				{{item.description}} <span class="item-note">{{item.value}}</span>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

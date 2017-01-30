@@ -1,0 +1,30 @@
+<ion-view title="Рабочие места">
+	<ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+	</ion-nav-buttons>
+	<ion-header-bar class="bar-subheader bar-stable">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios7-minus-outline" ng-click="list.showDelete = !list.showDelete"></button>
+		</div>
+		<h2 class="title"></h2>  
+		<div class="buttons">
+			<button class="button button-balanced button-outline" ng-click="modal_wp_add.show()">
+				Новое рабочее место
+				<i class="icon ion-ios7-plus-outline"></i>
+			</button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" class="has-header">
+		<ion-list show-delete="list.showDelete" can-swipe="true">
+			<ion-item class="item item-icon-left" ng-repeat="workplace in admin_workplaces">
+				<i class="icon ion-ios7-close-empty" ng-if="workplace.workplace_operable == 0"></i>
+				<i class="icon ion-ios7-download-outline" ng-if="workplace.workplace_operable == 1"></i>
+				{{workplace.workplace_type.type_name}} {{workplace.workplace_number}} ({{workplace.workplace_type.type_description}})
+				<span class="item-note">{{workplace.workplace_client.client_id}}</span>
+				<ion-delete-button class="ion-minus-circled" ng-click="delete($index, '{{workplace.workplace_id}}')"></ion-delete-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,544 @@
+#splash-page {
+  background-color: white;
+}
+#logo {
+  background: url('../img/ionic.png') no-repeat transparent;
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -64px 0px 0px -64px;
+}
+/************************************************/
+/*
+/* Стили бокового меню
+/*
+/************************************************/
+ion-side-menu ion-header-bar img, ion-side-menu ion-footer-bar img {
+	height: 100%;
+}
+ion-side-menu ion-content {
+	background: #384554;
+}
+ion-side-menu ion-content .item {
+	border-color: #3E4C59;
+	background-color: #384554;
+	color: #FFFFFF;
+}
+.bar.bar-dark {
+	border-color: #303C47;
+	background-color: #384554;
+	background-image: linear-gradient(0deg,#3E4C59,#3E4C59 50%,rgba(0, 0, 0, 0) 50%);
+	color: #FFF;
+}
+/************************************************/
+/*
+/* Стили вертикального центрирования
+/*
+/************************************************/
+.vertical-center-wrap{
+	text-align: center;
+}
+.vertical-center-wrap:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -0.25em; /* Adjusts for spacing */
+}
+.vertical-center-elem {
+	display: inline-block;
+	vertical-align: middle;
+}
+/************************************************/
+/*
+/* Стили общие для основного контента
+/*
+/************************************************/
+.main-content {
+
+}
+.main-content .list .item .icon {
+	color: #4A87EE;
+}
+/*.bar.bar-positive {
+	border-color: #303C47;
+	background-color: #384554;
+	background-image: linear-gradient(0deg,#3E4C59,#3E4C59 50%,rgba(0, 0, 0, 0) 50%);
+	color: #FFF;
+}*/
+/************************************************/
+/*
+/* Стили формы авторизации
+/*
+/************************************************/
+.login-pane {
+	background-image: url(/Views/ionic/img/grey_wash_wall.png);
+	background-repeat: repeat;
+}
+.login-form {
+	width: 270px;
+	margin: 0 auto;
+	padding: 10px 0;
+	border-top: 10px solid #E14A25;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.login-form .logo img {
+	width: 250px;
+	margin: 0 auto;
+}
+.login-form .list .item {
+
+}
+/************************************************/
+/*
+/* Стили индикатора
+/*
+/************************************************/
+.led {
+	background-color: #384554;
+}
+.led-number {
+	color: #EF4E3A;
+	font-size: 270px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.led-workplace-footer {
+	height: 120px;
+	text-align: center;
+	background-color: #384554;
+	background-image: linear-gradient(0deg,#3E4C59,#3E4C59 50%,rgba(0, 0, 0, 0) 50%);
+}
+.led-workplace-footer h1 {
+	color: #FFF;
+	font-size: 140px;
+	line-height: 105px;
+	text-transform: uppercase;
+	margin: 0 auto;
+}
+.led-PCSS {
+	color: #E9DAC4;
+}
+.led-WAIT {
+    color: #EF4E3A;
+	-webkit-animation-name: blinker;
+    -webkit-animation-duration: 1.2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1.2s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+/************************************************/
+/*
+/* Стили плазмы
+/*
+/************************************************/
+.plasma-table {
+	width: 100%;
+	height: 100%;
+	background-color: #384554;
+}
+.plasma-table-recent {
+	width: 40%;
+	vertical-align: middle;
+}
+.plasma-table-queue {
+	width: 60%;
+	vertical-align: middle;
+	text-transform: uppercase;
+}
+.plasma-table-queue tr {
+	height: 80px;
+}
+.plasma-table-queue tr .workplace {
+	color: #E9DAC4;
+}
+.plasma-table-recent table {
+	margin: 0 auto;
+}
+.bar-dark {
+	background-color: #384554;
+	background-image: linear-gradient(0deg,#3E4C59,#3E4C59 50%,rgba(0, 0, 0, 0) 50%);
+}
+.plasma-recent-ticket {
+	font-size: 140px;
+	font-weight: 600;
+	line-height: 140px;
+	text-transform: uppercase;
+}
+.plasma-recent-workplace {
+	font-size: 90px;
+	font-weight: 300;
+	color: #FFF;
+	line-height: 100px;
+	text-transform: uppercase;
+}
+.plasma-recent-workplace td {
+	padding: 0px 10px;
+}
+.plasma-table-queue table {
+	width: 100%;
+}
+.plasma-table-queue table tr {
+	font-size: 40px;
+	line-height: 30px;
+	color: #FFFFFF;
+}
+.marquee {
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #FFFFFF;
+	font-size: 40px;
+	line-height: 40px;
+}
+
+/************************************************/
+/*
+/* Стили терминала
+/*
+/************************************************/
+.terminal-content {
+	display: table;
+	width: 100%;
+}
+.terminal-prod-menu {
+	height: 100%;
+}
+.terminal-func-menu {
+	position: absolute;
+	bottom: 0;
+}
+.terminal-tiles {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
+.tile {
+	display: inline-table;
+	float: left;
+	width: 31.9%;
+	margin: 0.7%;
+	height: 125px;
+	padding: 10px 95px 10px 10px;
+	background-color: #FFF;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #5A2200;
+	font-size: 18px;
+	vertical-align: middle;
+	border-radius: 4px;
+	border: 1px solid #C99967;
+	cursor: pointer;
+}
+.tile.booking {
+	background-color: #C99967;
+	color: #FFF;
+}
+.tile .icon {
+	right: 0px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	font-size: 85px;
+	/*color: #FFF;
+	background-color: #C99967;*/
+	padding: 0 4px 0 7px;
+	width: 95px;
+}
+.tile .icon:before {
+	margin: 0 auto;
+}
+.tile span { 
+	display: table-cell;
+	vertical-align: middle;
+}
+.terminal-content-select + .bar.bar-footer.bar-light {
+	border: none;
+	height: 150px;
+	background-color: #384554;
+	background-image: linear-gradient(0deg,#3E4C59,#3E4C59 50%,rgba(0, 0, 0, 0) 50%);
+}
+.terminal-content-select + .bar.bar-footer.bar-light .tile {
+	padding: 10px;
+	text-align: center;
+	border-color: #E9DAC4;
+}
+.terminal-content-select + .bar.bar-footer.bar-light .tile .icon {
+	left: 0px;
+	right: inherit;
+	background-color: transparent;
+}
+.tile.button-terminal-back {
+	background-color: transparent;
+	color: #E9DAC4;
+}
+.tile.button-terminal-back .icon {
+	color: #E9DAC4;
+	background-color: transparent;
+}
+.tile.button-terminal-print {
+	background-color: #E9DAC4;
+	color: #5A2200;
+	font-size: 18px;
+	border-radius: 4px;
+	border: 1px solid #E9DAC4;
+}
+.tile.button-terminal-print .icon:before {
+	font-size: 60px;
+}
+.tile.terminal-servcount, .tile.terminal-submit {
+	border: none;
+	background-color: transparent;
+	color: #E9DAC4;
+}
+.tile.terminal-servcount .circle {
+	border-radius: 50%;
+	border: 1px solid #E9DAC4;
+	position: absolute;
+	right: 0;
+	display: block;
+	width: 100px;
+	height: 100px;
+	font-size: 80px;
+	line-height: 95px;
+}
+.tile.terminal-submit {
+	font-size: 38px;
+}
+.tile.terminal-submit p {
+	font-size: 20px;
+}
+.terminal-content-select .list .item {
+	border: 1px solid #E9DAC4;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #5A2200;
+	white-space: inherit;
+}
+.bar-mydocuments {
+	background-color: #E9DAC4;
+	color: #5A2200;
+	font-size: 18px;
+	border-bottom: 1px solid #DAC7AB;
+}
+.menu-content .list {
+	margin-bottom: -1px;
+}
+.terminal-content-select.shedule {
+	background-color: #384554;
+}
+.terminal-shedule-table {
+	width: 100%;
+	height: 460px;
+	position: absolute;
+	bottom: 165px;
+	/*top: 0px;*/
+	left: 0px;
+	right: 0px;
+}
+.terminal-shedule-form {
+	height: 180px;
+}
+.terminal-shedule-form td {
+	vertical-align: middle;
+}
+.terminal-shedule-keyboard {
+	height: 320px;
+	vertical-align: middle;
+}
+.terminal-shedule-keyboard table {
+	width: 100%;
+	text-align: center;
+}
+.terminal-shedule-keyboard table .keyboard-key, .shedule-key {
+	display: inline-block;
+	color: #E9DAC4;
+	border: 1px solid #E9DAC4;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 30px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	margin: 2px 0 2px 0;
+	cursor: pointer;
+}
+.terminal-shedule-keyboard table .keyboard-backspace {
+	width: 180px;
+}
+.terminal-shedule-keyboard table .keyboard-space {
+	width: 570px;
+}
+.terminal-shedule-form input {
+	background-color: #384554;
+	color: #E9DAC4;
+	width: 820px;
+	border: 1px solid #E9DAC4;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 30px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	margin: 0 auto;
+}
+.shedule-calendar {
+	text-align: center;
+	width: 100%;
+}
+.shedule-date {
+	width: 250px;
+}
+.shedule-holder {
+	display: inline-block;
+	margin: 0 14px;
+}
+.shedule-holder .bracket {
+	height: 21px;
+	color: #E9DAC4;
+	border-top: 1px solid #E9DAC4;
+	border-left: 1px solid #E9DAC4;
+	border-right: 1px solid #E9DAC4;
+	border-radius: 4px;
+}
+.date-holder {
+
+}
+.hours-holder {
+
+}
+.minutes-holder {
+
+}
+.ticket-helper {
+	margin: 60px auto 0 auto;
+	width: 405px;
+	height: 305px;
+}
+.ticket-helper:after {
+    background: linear-gradient(-45deg, #E9DAC4 8px, transparent 0), linear-gradient(45deg, #E9DAC4 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+.helper-pincode {
+	font-size: 44px;
+	height: 60px;
+	line-height: 60px;
+	color: #E9DAC4 !important;
+}
+.helper-info {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #E9DAC4 !important;
+	height: 155px;
+	display: table-cell;
+	vertical-align: middle;
+}
+/************************************************/
+/*
+/* Стили модала с талонами
+/*
+/************************************************/
+.modal {
+	top: 0%;
+	right: 0%;
+	bottom: 0%;
+	left: 0%;
+	overflow: visible;
+	min-height: 240px;
+	width: 100%;
+}
+.ticket-modal .pane {
+	background-color: #384554;
+}
+.ticket-content {
+	color: rgba(233, 218, 196, 0.5) !important;
+	border: 1px solid #E9DAC4;
+	padding: 10px;
+	border-radius: 4px;
+}
+.ticket-content:after {
+    background: linear-gradient(-45deg, #E9DAC4 8px, transparent 0), linear-gradient(45deg, #E9DAC4 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+.ticket-content table {
+	width: 380px !important;
+	font-size: 12px;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+.ticket-number {
+	font-size: 44px;
+	height: 60px;
+	line-height: 60px;
+	color: #E9DAC4 !important;
+}
+.ticket-postscript {
+	text-transform: uppercase;
+	font-size: 44px;
+	padding: 30px 0;
+	color: #E9DAC4;
+}

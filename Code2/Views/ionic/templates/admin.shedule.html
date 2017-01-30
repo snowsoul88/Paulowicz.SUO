@@ -1,0 +1,32 @@
+<ion-view title="Расписание">
+	<ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+	</ion-nav-buttons>
+	<ion-header-bar class="bar-subheader bar-stable">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios7-minus-outline" ng-click="list.showDelete = !list.showDelete"></button>
+		</div>
+		<h2 class="title"></h2>  
+		<div class="buttons">
+			<button class="button button-balanced button-outline" ng-click="modal_ts_add.show()">
+				Новый тип расписания
+				<i class="icon ion-ios7-plus-outline"></i>
+			</button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" class="has-header">
+		<ion-list can-swipe="true" show-delete="list.showDelete">
+			<ion-item class="item item-icon-left item-icon-right" ng-repeat="type in shedule_types">
+				<i class="icon ion-ios7-bolt-outline" ng-if="type.type_operable == 0"></i>
+				<i class="icon ion-ios7-bolt" ng-if="type.type_operable == 1"></i>
+				{{type.type_description}}
+				<span class="item-note">{{type.type_name}}</span>
+				<i class="icon ion-ios7-more-outline"></i>
+				<ion-delete-button class="ion-minus-circled" ng-click="delete($index, '{{type.type_id}}')"></ion-delete-button>
+				<ion-option-button class="button-positive button-clear" ng-click="change('{{type.type_id}}')">Изменить</ion-option-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

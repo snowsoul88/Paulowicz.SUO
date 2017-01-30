@@ -1,0 +1,21 @@
+<ion-modal-view>
+	<ion-header-bar align-title="center" class="bar bar-header bar-assertive item-input-inset">
+		<div class="buttons">
+			<button class="button button-clear" ng-click="modal_bind_situations.hide()">Закрыть</button>
+		</div>
+		<h2 class="title">Привязка жизненных ситуаций к пользователю</h2>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="add_binded_situations()">Готово</button>
+		</div>
+	</ion-header-bar>
+    <ion-content has-header="true" padding="true">
+		<ion-list>
+			<ion-item class="item item-checkbox" ng-repeat="situation in situations">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="situation.enabled" value="{{situation.situation_id}}">
+				</label>
+				{{situation.situation_name}}
+			</ion-item>
+		</ion-list>
+    </ion-content>
+</ion-modal-view>

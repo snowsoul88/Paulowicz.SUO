@@ -1,0 +1,55 @@
+<ion-modal-view>
+	<ion-header-bar align-title="center" class="bar bar-header bar-assertive item-input-inset">
+		<h1 class="title">Новый клиентский аккаунт</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="modal_cl_add.hide()">Закрыть</button>
+		</div>
+	</ion-header-bar>
+    <ion-content has-header="true" padding="true">
+   		<form method="post" ng-submit="admin_cl_add()" name="add_form">
+			<div class="list list-inset">
+	  			<label class="item item-input">
+	    			<input type="text" placeholder="Идентификатор" ng-model="adata.client_id" required>
+	  			</label>
+	  			<label class="item item-input">
+	    			<input type="text" placeholder="Разрешенный IP адрес" ng-model="adata.REMOTE_ADDR">
+	  			</label>
+	  			<label class="item item-input">
+	    			<input type="text" placeholder="Разрешенный прокси" ng-model="adata.HTTP_X_FORWARDED_FOR">
+	  			</label>
+	  		</div>
+			<div class="list list-inset">
+	  			<label class="item item-radio">
+	    			<input type="radio" name="role" ng-model="adata.role" value="0" required>
+	    			<div class="item-content">
+	      			Администратор
+	    			</div>
+	    			<i class="radio-icon ion-checkmark"></i>
+	  			</label>
+	  			<label class="item item-radio">
+	    			<input type="radio" name="role" ng-model="adata.role" value="1" required>
+	    			<div class="item-content">
+	      			Оператор
+	    			</div>
+	    			<i class="radio-icon ion-checkmark"></i>
+	  			</label>
+	  			<label class="item item-radio">
+	    			<input type="radio" name="role" ng-model="adata.role" value="2" required>
+	    			<div class="item-content">
+	      			Киоск
+	    			</div>
+	    			<i class="radio-icon ion-checkmark"></i>
+	  			</label>
+	  			<label class="item item-radio">
+	    			<input type="radio" name="role" ng-model="adata.role" value="3" required>
+	    			<div class="item-content">
+	      			Оповещение
+	    			</div>
+	    			<i class="radio-icon ion-checkmark"></i>
+	  			</label>
+			</div>
+			<div class="padding">
+				<button class="button button-block button-balanced" ng-disabled="add_form.$invalid">Готово</button>
+			</div>
+    </ion-content>
+</ion-modal-view>

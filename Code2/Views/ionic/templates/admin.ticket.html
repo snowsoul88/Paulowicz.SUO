@@ -1,0 +1,24 @@
+<ion-view title="Талон {{admin_tickets_ticket.ticket_prefix}} {{admin_tickets_ticket.ticket_number}}">
+    <ion-header-bar class="bar-subheader bar-stable">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios7-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+			<button class="button button-clear" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">Приоритет</button>
+		</div>
+		<h2 class="title"></h2>  
+		<div class="buttons">
+			<button class="tab-item button button-assertive" ng-click="ticket_add('ADD')">Добавить продукт в талон</button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" class="has-header has-subheader">
+		<ion-list show-delete="data.showDelete" show-reorder="data.showReorder" can-swipe="true">
+			<ion-item class="item item-icon-right" ng-repeat="product in admin_tickets_ticket.products">
+					{{product.product_name}}
+					<i class="icon ion-ios7-more-outline"></i>
+					<ion-delete-button class="ion-minus-circled" ng-click="admin_tickets_cancel($index, '{{admin_tickets_ticket.ticket_id}}', '{{product.product_id}}')"></ion-delete-button>
+					<ion-reorder-button class="ion-navicon" on-reorder="admin_tickets_priority({{product}}, $fromIndex, $toIndex, '{{admin_tickets_ticket.ticket_id}}')"></ion-reorder-button>
+					<ion-option-button class="button-assertive icon-left ion-ios7-people-outline" suo-redirect-users="{{product.product_id}}"></ion-option-button>
+					<ion-option-button class="button-energized icon-left ion-ios7-home-outline" suo-redirect-workplaces="{{product.product_id}}"></ion-option-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

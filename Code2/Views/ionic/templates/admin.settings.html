@@ -1,0 +1,30 @@
+<ion-view title="Установки">
+	<ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+	</ion-nav-buttons>
+	<ion-header-bar class="bar-subheader bar-stable">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios7-minus-outline" ng-click="list.showDelete = !list.showDelete"></button>
+		</div>
+		<h2 class="title"></h2>  
+		<div class="buttons">
+			<button class="button button-balanced button-outline" ng-click="modal.show()">
+				Новая сущность
+				<i class="icon ion-ios7-plus-outline"></i>
+			</button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" class="has-header">
+		<ion-list can-swipe="true" show-delete="list.showDelete">
+			<ion-item class="item item-icon-right" ng-repeat="entity in settings_entities" ng-href="/#/admin/settings/parameters/{{entity.entity}}">
+				{{entity.description}}
+				<span class="item-note">{{entity.entity}}</span>
+				<i class="icon ion-ios7-arrow-right"></i>
+				<ion-delete-button class="ion-minus-circled" ng-click="delete($index, '{{entity.entity}}')" ng-if="entity.sys == 0"></ion-delete-button>
+				<ion-option-button class="button-positive button-clear" ng-click="change('{{type.type_id}}')" ng-if="entity.sys == 0">Изменить</ion-option-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

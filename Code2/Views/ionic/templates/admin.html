@@ -1,0 +1,18 @@
+<ion-view title="Администратор зала">
+	<ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button" ng-click="ticket_add('NEW')">Зарегистрировать талон</button>
+	</ion-nav-buttons>
+	<ion-content padding="false" class="has-header main-content">
+		<ion-list can-swipe="true">
+			<ion-item class="item item-icon-left ticket_class('{{ticket.queue_recent_state.action_id}}')" href="/#/admin/ticket/{{ticket.ticket_id}}" ng-repeat="ticket in admin_tickets">
+				<i class="icon ion-ios7-information-outline"></i>
+					<b>{{ticket.ticket_prefix}} {{ticket.ticket_number}}</b>
+					{{ticket.queue_recent_state.action_name}}
+				<span class="item-note">{{format_time(ticket.ticket_created)}}</span>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
